@@ -7,12 +7,16 @@ import cherrypy
 class StringGenerator(object):
     @cherrypy.expose
     def index(self):
-        return "Hello world!"
+        return """<html>
+          <head></head>
+          <body>
+            Hello HTML
+          </body>
+        </html>"""
 
     @cherrypy.expose
-    def generate(self, length=8):
-        return ''.join(random.sample(string.hexdigits, int(length)))
-
+    def generate(self):
+        return "hello Pages"
 
 if __name__ == '__main__':
     cherrypy.quickstart(StringGenerator())

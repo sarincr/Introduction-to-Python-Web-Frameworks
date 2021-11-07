@@ -1,7 +1,6 @@
 import cherrypy
-
-class demoExample:
+class HelloWorld:
     def index(self):
-        return "Hello World!!!"
+        return "Hello World!"
     index.exposed = True
-cherrypy.quickstart(demoExample())
+cherrypy.quickstart(HelloWorld())

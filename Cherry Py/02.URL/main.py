@@ -1,16 +1,12 @@
-import random
-import string
 
 import cherrypy
 
-class StringGenerator(object):
-    @cherrypy.expose
+class HelloWorld():
     def index(self):
-        return "Hello world!"
+        return "Hello World!"
+    index.exposed = True
 
     @cherrypy.expose
-    def generate(self, length=8):
-        return ''.join(random.sample(string.hexdigits, int(length)))
-
-if __name__ == '__main__':
-    cherrypy.quickstart(StringGenerator())
+    def test(self):
+        return "Test Controller"
+cherrypy.quickstart(HelloWorld())
